@@ -714,34 +714,40 @@ body.dark {
         border-radius: 28px;
         position: relative;
       }
-     .modal-image {
-  aspect-ratio: 16 / 9;
+   .modal-image {
   width: 100%;
+  aspect-ratio: 16 / 9;
   overflow: hidden;
+  background: #0f0f0f;
+  border-top-left-radius: 28px;
+  border-top-right-radius: 28px;
 }
       .modal-image img {
         width: 100%;
         height: 100%;
         object-fit: cover;
       }
-          .carousel {
-         width: 100%;
-         aspect-ratio: 16 / 9;
-         background: #0f0f0f;
-         display: flex;
-         align-items: center;
-         justify-content: center;
-         overflow: hidden;
-       }
+        .carousel {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
        
-       .carousel img {
-         width: 100%;
-         height: 100%;
-         object-fit: contain;
-       }
-      .modal-content {
-        padding: 35px;
-      }
+      .carousel img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+     .modal-content {
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
 
       .modal-content h2 {
         font-size: 42px;
@@ -1015,9 +1021,14 @@ body.dark {
           font-size: 44px;
         }
 
-        .modal-image {
-          height: 240px;
-        }
+       .modal-image {
+    aspect-ratio: 4 / 3;
+  }
+
+  .modal-box {
+    max-height: 95vh;
+    overflow-y: auto;
+  }
 
         .modal-content h2 {
           font-size: 28px;
