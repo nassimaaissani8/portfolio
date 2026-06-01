@@ -509,7 +509,7 @@
     </div>
   </div>
 </section>
-<!-- CONTACT -->
+<!-- 
 <section id="contact">
    <h2 class="section-title reveal"> <span class="icon">📩</span>Contact Me</h2>
       <div class="contact-layout">
@@ -535,7 +535,7 @@
           </p>
         </form>
       </div>
-  </section>
+  </section> -->
 </main>
 </div>
 <!-- MODAL -->
@@ -927,67 +927,7 @@ window.addEventListener("scroll", () => {
 function toggleMenu() {
   document.getElementById("navMenu").classList.toggle("active");
 }
-emailjs.init({
-  publicKey: "7mbOIDpi-aFAmQWVe"
-});
-function submitForm(e) {
-  e.preventDefault();
-  const nameInput = document.querySelector('input[type="text"]');
-  const emailInput = document.querySelector('input[type="email"]');
-  const messageInput = document.querySelector('textarea');
-  const name = nameInput.value.trim();
-  const email = emailInput.value.trim();
-  const message = messageInput.value.trim();
-  const success = document.getElementById("success");
-  const error = document.getElementById("error");
 
-  // reset messages
-  success.style.display = "none";
-  error.style.display = "none";
-
-  // ❌ VALIDATION
-  if (!name || !email || !message) {
-    error.textContent = "❌ All fields are required";
-    error.style.display = "block";
-    return;
-  }
-
-  // email format check
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (!emailRegex.test(email)) {
-    error.textContent = "❌ Invalid email address";
-    error.style.display = "block";
-    return;
-  }
-
-  // message length check
-  if (message.length < 10) {
-    error.textContent = "❌ Message must be at least 10 characters";
-    error.style.display = "block";
-    return;
-  }
-
-  // ✅ SEND EMAILJS
-  emailjs.send("service_vbqlugf", "template_huq313o", {
-    name,
-    email,
-    message,
-    time: new Date().toLocaleString()
-  })
-  .then(() => {
-    success.style.display = "block";
-    e.target.reset();
-
-    setTimeout(() => {
-      success.style.display = "none";
-    }, 3000);
-  })
-  .catch((err) => {
-    error.textContent = "❌ Error sending message";
-    error.style.display = "block";
-    console.log(err);
-  });
-}
 </script> 
 </body> 
 </html>
